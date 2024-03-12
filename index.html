@@ -10,11 +10,26 @@
 <body>
     <div>
         <label for="">Tên đăng nhập</label>
-        <input type="text">
+        <input type="text" id="username">
         <label for="">Mật khẩu</label>
-        <input type="password">
-        <button>Dang Nhap</button>
+        <input type="password" id="password">
+        <button onclick="login()">Dang Nhap</button>
     </div>
+    <script>
+        function login() {
+            var usernameInput = document.getElementById("username").value;
+            var passwordInput = document.getElementById("password").value;
+
+            // Kiểm tra tên đăng nhập và mật khẩu
+            if (usernameInput === "admin" && passwordInput === "admin") {
+                // Nếu đúng, chuyển hướng sang trang main.html
+                window.location.href = "main.html";
+            } else {
+                // Nếu sai, hiển thị thông báo lỗi
+                alert("Tên đăng nhập hoặc mật khẩu không đúng!");
+            }
+        }
+    </script>
 </body>
 
 </html>
